@@ -17,12 +17,12 @@ spec:
         - name: dynamodb-local
           image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          args: [ "-Djava.library.path=./DynamoDBLocal_lib", "-jar", "DynamoDBLocal.jar", "-dbPath", "/usr/share/nginx/html", "-sharedDb"]
+          args: [ "-Djava.library.path=./DynamoDBLocal_lib", "-jar", "DynamoDBLocal.jar", "-sharedDb"]
           ports:
             - containerPort: 8000
           volumeMounts:
             - name: task-pv-storage
-              mountPath: "/usr/share/nginx/html"
+              mountPath: "/home/dynamodblocal/data"
       volumes:
         - name: task-pv-storage
           persistentVolumeClaim:
