@@ -48,6 +48,12 @@ Refer [Installation Steps](https://docs.aws.amazon.com/amazondynamodb/latest/dev
 -- Port: 8000
 - Import Sample DynamoDB Tables
 
+## Helm install command
+
+```
+$ helm install aws ./dynamodb-local-k8s-depl
+```
+
 ## Using AWS CLI to create tables - paste in dev terminal and not pod terminal
 
 ```
